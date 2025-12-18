@@ -1,405 +1,426 @@
 /* --- Variables et Réinitialisation de Base --- */
 :root {
-    --primary-color: #007bff; /* Bleu pour les CTA et liens principaux */
-    --secondary-color: #6c757d; /* Gris secondaire */
-    --text-color: #343a40; /* Texte principal foncé */
-    --bg-light: #f8f9fa; /* Fond clair */
-    --bg-white: #ffffff; /* Fond blanc */
-    --font-family: 'Roboto', sans-serif;
-    --border-radius: 8px;
-    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --primary-color: #007bff; /* Bleu pour les CTA et liens principaux */
+  --secondary-color: #6c757d; /* Gris secondaire */
+  --text-color: #343a40; /* Texte principal foncé */
+  --bg-light: #f8f9fa; /* Fond clair */
+  --bg-white: #ffffff; /* Fond blanc */
+  --font-family: "Roboto", sans-serif;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: var(--font-family);
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--bg-white);
+  font-family: var(--font-family);
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-white);
 }
 
 a {
-    text-decoration: none;
-    color: var(--primary-color);
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #0056b3; /* Une teinte plus foncée de primary-color */
+  color: #0056b3; /* Une teinte plus foncée de primary-color */
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 /* --- Typographie Générale --- */
-h1, h2, h3 {
-    margin-bottom: 1rem;
-    line-height: 1.2;
+h1,
+h2,
+h3 {
+  margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 h1 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 h2 {
-    font-size: 1.75rem;
+  font-size: 1.75rem;
 }
 
 /* --- Boutons (CTA) --- */
 .btn-cta {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: var(--bg-white);
-    padding: 0.75rem 1.5rem;
-    border-radius: 50px;
-    font-weight: 700;
-    text-align: center;
-    border: 2px solid var(--primary-color);
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-    cursor: pointer;
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--bg-white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-align: center;
+  border: 2px solid var(--primary-color);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
 }
 
 .btn-cta:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-    color: var(--bg-white);
-    transform: translateY(-2px);
+  background-color: #0056b3;
+  border-color: #0056b3;
+  color: var(--bg-white);
+  transform: translateY(-2px);
 }
 
 /* --- En-tête et Navigation (Header) --- */
 header {
-    background-color: var(--bg-white);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  background-color: var(--bg-white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .logo {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-color);
 }
 
 .nav-links {
-    display: flex;
-    gap: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
 }
 
 .nav-links a {
-    color: var(--text-color);
-    font-weight: 500;
-    padding: 0.25rem 0;
-    position: relative;
+  color: var(--text-color);
+  font-weight: 500;
+  padding: 0.25rem 0;
+  position: relative;
 }
 
 .nav-links a:hover {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 /* Soulignement subtil pour les liens de navigation */
 .nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: var(--primary-color);
-    transition: width 0.3s ease;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover::after,
-.nav-links a[href*="current-page-name"]::after { /* À ajuster si vous voulez un indicateur actif */
-    width: 100%;
+.nav-links a[href*="current-page-name"]::after {
+  /* À ajuster si vous voulez un indicateur actif */
+  width: 100%;
 }
-
 
 /* --- Sections Générales --- */
 section {
-    padding: 3rem 1.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
+  padding: 3rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.about, .stats, .cta, .services-page, .contact-page {
-    text-align: center;
+.about,
+.stats,
+.cta,
+.services-page,
+.contact-page {
+  text-align: center;
 }
 
 /* --- Section Hero (index.html) --- */
 .hero {
-    background-color: var(--bg-light);
-    padding: 4rem 1.5rem;
-    text-align: center;
+  background-color: var(--bg-light);
+  padding: 4rem 1.5rem;
+  text-align: center;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
 }
 
 .hero p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
 }
 
 /* --- Cartes de Service (Services Section & Pages) --- */
 .service-cards {
-    display: grid;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .service-cards .card {
-    background-color: var(--bg-white);
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--bg-white);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-cards .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 .service-cards .card h3 {
-    color: var(--primary-color);
-    font-size: 1.3rem;
-    margin-bottom: 0.75rem;
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
 }
 
 .services-page .card {
-    text-align: center; /* Pour les forfaits */
+  text-align: center; /* Pour les forfaits */
 }
 
 .services-page .card h3:nth-of-type(2) {
-    /* Style pour le prix du forfait */
-    font-size: 1.8rem;
-    color: var(--text-color);
-    margin: 0.5rem 0 1rem;
-    font-weight: 700;
+  /* Style pour le prix du forfait */
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin: 0.5rem 0 1rem;
+  font-weight: 1000;
 }
 
 /* Ajustement pour les forfaits sur la page services */
 .services-page h2 {
-    margin-top: 3rem;
-    padding-top: 1rem;
-    border-top: 1px solid #ccc;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ccc;
 }
 
 /* --- Section Statistiques (Stats) --- */
 .stats {
-    background-color: var(--primary-color);
-    color: var(--bg-white);
-    padding: 2rem 1.5rem;
+  background-color: var(--primary-color);
+  color: var(--bg-white);
+  padding: 2rem 1.5rem;
 }
 
 .stats .stats-card h3 {
-    font-size: 2.5rem;
-    margin-bottom: 0.25rem;
-    font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 0.25rem;
+  font-weight: 700;
 }
 
 .stats .stats-card p {
-    font-size: 1rem;
-    opacity: 0.8;
+  font-size: 1rem;
+  opacity: 0.8;
 }
 
 /* Mise en page pour les stats en mobile */
 .stats .stats-card:not(:last-child) {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 /* --- Call to Action (CTA) --- */
 .cta {
-    background-color: var(--bg-light);
-    padding: 3rem 1.5rem;
-    border-radius: var(--border-radius);
-    margin: 2rem auto;
+  background-color: var(--bg-light);
+  padding: 3rem 1.5rem;
+  border-radius: var(--border-radius);
+  margin: 2rem auto;
 }
 
 .cta h2 {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 /* --- Formulaire de Contact (contact.html) --- */
 .contact-page h1 {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .contact-form {
-    max-width: 500px;
-    margin: 2rem auto;
-    background-color: var(--bg-light);
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    text-align: left;
+  max-width: 500px;
+  margin: 2rem auto;
+  background-color: var(--bg-light);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  text-align: left;
 }
 
 .contact-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
-    width: 100%;
-    padding: 0.75rem;
-    margin-bottom: 1.5rem;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: var(--primary-color);
-    outline: none;
+  border-color: var(--primary-color);
+  outline: none;
 }
 
 .contact-form textarea {
-    resize: vertical;
+  resize: vertical;
 }
 
 .contact-form .btn-cta {
-    width: 100%;
-    border-radius: 4px;
+  width: 100%;
+  border-radius: 4px;
 }
 
 .contact-info {
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid #dee2e6;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #dee2e6;
 }
 
 .contact-info p {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 /* --- Pied de Page (Footer) --- */
 footer {
-    background-color: var(--text-color);
-    color: var(--bg-white);
-    text-align: center;
-    padding: 1rem 1.5rem;
-    font-size: 0.9rem;
+  background-color: var(--text-color);
+  color: var(--bg-white);
+  text-align: center;
+  padding: 1rem 1.5rem;
+  font-size: 0.9rem;
 }
 
 footer a {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 /* --- MEDIA QUERIES pour le Responsive Design --- */
 
 /* Appareils Moyens (Tablettes, > 768px) */
 @media (min-width: 768px) {
-    /* Typographie */
-    h1 {
-        font-size: 3rem;
-    }
-    h2 {
-        font-size: 2.25rem;
-    }
+  /* Typographie */
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2.25rem;
+  }
 
-    /* Sections */
-    section {
-        padding: 4rem 2rem;
-    }
+  /* Sections */
+  section {
+    padding: 4rem 2rem;
+  }
 
-    /* Hero */
-    .hero {
-        padding: 6rem 2rem;
-    }
+  /* Hero */
+  .hero {
+    padding: 6rem 2rem;
+  }
 
-    /* Cartes de Service */
-    .service-cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    /* Stats */
-    .stats .stats-card:not(:last-child) {
-        margin-bottom: 0;
-    }
-    .stats .stats-card {
-        padding: 0 1rem;
-    }
-    .stats .stats-card h3 {
-        font-size: 3rem;
-    }
-    .stats .stats-card p {
-        font-size: 1.1rem;
-    }
+  /* Cartes de Service */
+  .service-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Stats */
+  .stats .stats-card:not(:last-child) {
+    margin-bottom: 0;
+  }
+  .stats .stats-card {
+    padding: 0 1rem;
+  }
+  .stats .stats-card h3 {
+    font-size: 3rem;
+  }
+  .stats .stats-card p {
+    font-size: 1.1rem;
+  }
 }
 
 /* Grands Appareils (Ordinateurs de Bureau, > 1024px) */
 @media (min-width: 1024px) {
-    /* Header/Navbar */
-    .navbar {
-        padding: 1rem 3rem;
-    }
+  /* Header/Navbar */
+  .navbar {
+    padding: 1rem 3rem;
+  }
 
-    /* Sections */
-    section {
-        padding: 5rem 3rem;
-    }
-    
-    /* Hero */
-    .hero h1 {
-        font-size: 3.5rem;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  /* Sections */
+  section {
+    padding: 5rem 3rem;
+  }
 
-    /* Cartes de Service */
-    /* index.html: 3 colonnes */
-    .services .service-cards {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    /* services.html: 3 colonnes pour les services et 3 pour les forfaits */
-    .services-page .service-cards:first-of-type {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .services-page .service-cards:last-of-type {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  /* Hero */
+  .hero h1 {
+    font-size: 3.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    /* Stats: 3 colonnes */
-    .stats {
-        padding: 3rem 2rem;
-    }
-    .stats .service-cards { /* Le HTML de stats utilise le même layout */
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-    }
-    
-    /* Contact Form */
-    .contact-form {
-        padding: 3rem;
-    }
-    .contact-info p {
-        font-size: 1.1rem;
-    }
+  /* Cartes de Service */
+  /* index.html: 3 colonnes */
+  .services .service-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  /* services.html: 3 colonnes pour les services et 3 pour les forfaits */
+  .services-page .service-cards:first-of-type {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .services-page .service-cards:last-of-type {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Stats: 3 colonnes */
+  .stats {
+    padding: 3rem 2rem;
+  }
+  .stats .service-cards {
+    /* Le HTML de stats utilise le même layout */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  /* Contact Form */
+  .contact-form {
+    padding: 3rem;
+  }
+  .contact-info p {
+    font-size: 1.1rem;
+  }
+  .btn-actif {
+    background-color: #222;
+    color: #fff;
+    transform: scale(1.05);
+    transition: 0.3s;
+  }
+
+  #message {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #222;
+    font-weight: bold;
+    transition: 0.3s;
+  }
 }
