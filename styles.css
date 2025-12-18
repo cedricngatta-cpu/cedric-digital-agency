@@ -43,6 +43,7 @@ h2,
 h3 {
   margin-bottom: 1rem;
   line-height: 1.2;
+  text-align: center;
 }
 
 h1 {
@@ -51,6 +52,7 @@ h1 {
 
 h2 {
   font-size: 1.75rem;
+  text-align: center;
 }
 
 /* --- Boutons (CTA) --- */
@@ -69,7 +71,7 @@ h2 {
 
 .btn-cta:hover {
   background-color: #0056b3;
-  border-color: #0056b3;
+  border-color: #6a1a99;
   color: var(--bg-white);
   transform: translateY(-2px);
 }
@@ -177,7 +179,7 @@ section {
   padding: 1.5rem;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-  text-align: left;
+  text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -424,3 +426,4 @@ footer a {
     transition: 0.3s;
   }
 }
+
