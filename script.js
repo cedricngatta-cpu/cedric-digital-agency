@@ -1,23 +1,41 @@
-const bouton = document.querySelector(".btn-forfait");
-const message = document.querySelector("#message");
+/**
+ * GESTION GLOBALE DES CARTES
+ */
+const allCards = document.querySelectorAll(".card");
 
-message.textContent = ""; // Message vide au chargement
+allCards.forEach((card) => {
+  card.addEventListener("click", function (e) {
+    // Si on clique sur un lien de paiement
+    if (e.target.classList.contains("pay-link")) {
+      const link = e.target;
 
-bouton.addEventListener("click", function (event) {
-  event.preventDefault(); // Empêche le reload de la page
+      // Animation au clic
+      link.classList.add("clicked");
+      setTimeout(() => link.classList.remove("clicked"), 200);
 
-  // Changement visuel du bouton
-  bouton.classList.add("btn-actif");
+      // On laisse l'événement continuer pour la redirection
+      return;
+    }
 
-  // Affiche le message
-  message.textContent = "Merci ! Nous allons vous contacter très bientôt.";
-  message.style.color = "#222";
-  message.style.fontWeight = "bold";
-  message.style.marginTop = "10px";
+    // Empêche de fermer si on clique sur un élément interne sans importance
+    if (e.target.tagName === "UL" || e.target.tagName === "LI") return;
 
-  // Faire disparaître le message après 10 secondes (10000 ms)
-  setTimeout(function () {
-    message.textContent = "";
-    bouton.classList.remove("btn-actif"); // Optionnel : remettre le bouton normal
-  }, 10000);
+    // Effet accordéon
+    allCards.forEach((c) => {
+      if (c !== card) c.classList.remove("is-active");
+    });
+
+    this.classList.toggle("is-active");
+  });
+});
+
+/**
+ * BOUTONS DE FERMETURE
+ */
+document.querySelectorAll(".btn-close").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const parent = btn.closest(".card");
+    if (parent) parent.classList.remove("is-active");
+  });
 });
