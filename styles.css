@@ -583,3 +583,15 @@ body {
 html {
   background-color: var(--bg-white);
 }
+/* Style pour le logo en tant que lien */
+a.logo {
+  text-decoration: none; /* Enlève le soulignement automatique */
+  color: var(--text-color); /* Utilise la couleur sombre de votre agence */
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+a.logo:hover {
+  color: var(--primary-color); /* Change vers le bleu au survol */
+  text-decoration: none;
+}
